@@ -1,1 +1,117 @@
 @import 'reset';
+:root {
+	font-family: sans-serif;
+	--border-color: #aaa;
+	--border-radius: 0.25rem;
+	--hover-background-color: #f4f4f4;
+	--active-background-color: #ececec;
+	--background-transition: background ease-out 0.1s;
+}
+
+.pick-date {
+	max-width: 20rem;
+}
+
+.year-container,
+.month-container {
+	display: flex;
+	flex-direction: row;
+}
+
+.prev-year-button,
+.next-year-button,
+.prev-month-button,
+.next-month-button {
+	flex: 1 1 0;
+	border: 1px solid transparent;
+	font-size: 1rem;
+	padding: 0;
+	background: none transparent;
+	margin: 1px;
+	border-radius: var(--border-radius);
+	text-align: center;
+	box-sizing: border-box;
+	transition: var(--background-transition);
+	&:hover {
+		background: var(--hover-background-color);
+	}
+	&:active {
+		background-color: var(--active-background-color);
+	}
+}
+
+.prev-month,
+.next-month {
+	opacity: 0.3;
+}
+
+.input-container {
+	flex: 5 5 0;
+	margin: 1px;
+}
+
+.input-year,
+.input-month {
+	display: block;
+	border-radius: var(--border-radius);
+	font-size: 1rem;
+	padding: 0.25rem;
+	width: 0;
+	min-width: 100%;
+	border: 1px solid transparent;
+	text-align: center;
+	box-sizing: border-box;
+	cursor: pointer;
+	transition: var(--background-transition);
+	&:hover {
+		background-color: var(--hover-background-color);
+	}
+	&:active {
+		background-color: var(--active-background-color);
+	}
+	&:focus {
+		border-color: var(--border-color);
+		background-color: transparent;
+		cursor: text;
+	}
+}
+
+.days-of-the-week {
+	font-size: 0.6rem;
+}
+
+.date {
+	cursor: pointer;
+	border-radius: var(--border-radius);
+	border: 1px solid transparent;
+	transition: var(--background-transition);
+	&.selected {
+		border-color: var(--border-color);
+	}
+	&:hover {
+		background-color: var(--hover-background-color);
+	}
+	&:active {
+		background-color: var(--active-background-color);
+	}
+}
+
+.date-table {
+	.row {
+		display: flex;
+		flex-direction: row;
+	}
+	.cell {
+		flex: 1 1 0;
+		padding: 0.5rem;
+		text-align: center;
+		margin: 1px;
+	}
+}
+
+.sunday {
+	color: #f42;
+}
+.saturday {
+	color: #08f;
+}
